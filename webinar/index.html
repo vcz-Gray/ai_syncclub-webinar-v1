@@ -609,9 +609,9 @@
       .demo-figure img {
         width: 100%;
         max-width: 100%;
-        max-height: 220px;
-        height: auto;
-        object-fit: contain;
+        height: 100%;
+        max-height: none;
+        object-fit: cover;
         object-position: center;
         display: block;
         margin: 0 auto;
@@ -630,22 +630,27 @@
       .demo-figure--wide {
         max-width: 1040px;
         margin: 0 auto;
-        min-height: auto;
+        min-height: 320px;
+        height: 320px;
+        overflow: hidden;
       }
 
       .demo-figure--wide img {
-        max-height: 420px;
+        height: 100%;
       }
 
       .demo-figure--portrait {
         max-width: 420px;
         margin: 0 auto;
-        min-height: auto;
+        min-height: 320px;
+        height: 320px;
+        overflow: hidden;
       }
 
       .demo-figure--portrait img {
-        max-height: 460px;
-        width: auto;
+        width: 100%;
+        height: 100%;
+        object-position: top center;
       }
 
 
@@ -775,12 +780,14 @@
       }
 
       .slide-side-media .demo-figure {
-        min-height: 148px;
+        min-height: 164px;
+        height: 164px;
         padding: 10px;
+        overflow: hidden;
       }
 
       .slide-side-media .demo-figure img {
-        max-height: 132px;
+        height: 100%;
       }
 
       .slide-prd-compare {
@@ -823,11 +830,27 @@
       }
 
       .slide-prd-compare .demo-figure {
-        min-height: 182px;
+        min-height: 190px;
+        height: 190px;
+        overflow: hidden;
       }
 
       .slide-prd-compare .demo-figure img {
-        max-height: 168px;
+        height: 100%;
+      }
+
+      .slide-prd-intro .highlight-box {
+        margin-top: 28px !important;
+        padding: 16px !important;
+      }
+
+      .slide-prd-intro .demo-figure--portrait {
+        height: 280px;
+        min-height: 280px;
+      }
+
+      .slide-prd-intro .demo-figure--portrait img {
+        object-position: top center;
       }
 
       /* QR placeholder */
@@ -1148,7 +1171,16 @@
         }
 
         .demo-figure img {
-          max-height: 240px;
+          height: 100%;
+        }
+
+        .demo-figure--wide,
+        .demo-figure--portrait,
+        .slide-side-media .demo-figure,
+        .slide-prd-compare .demo-figure,
+        .slide-prd-intro .demo-figure--portrait {
+          height: 240px;
+          min-height: 240px;
         }
       }
     </style>
@@ -1181,7 +1213,7 @@
         </div>
 
         <!-- SLIDE 2: Self-intro -->
-        <div class="slide">
+        <div class="slide slide-media-single slide-prd-intro">
           <div class="badge">PART 1</div>
           <h1 style="margin-bottom: 48px">안녕하세요, 박규하입니다</h1>
 
