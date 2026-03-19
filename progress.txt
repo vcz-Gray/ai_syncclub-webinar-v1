@@ -104,3 +104,17 @@
   - The installable skills should stay compact and delegate verbose examples to `references/examples.md`.
   - A dedicated `skills/index.html` is necessary so non-Codex users can still understand what each skill does.
 ---
+
+## 2026-03-19 - US-006
+- Finalized the repo documentation with a root README and confirmed the full site package passes all validation phases.
+- Files changed:
+  - README.md
+  - prd.json
+  - progress.txt
+  - .claude/ralph-loop.local.md
+- Verification:
+  - `python3 scripts/validate_site.py --phase full`
+- **Learnings for future iterations:**
+  - The repo now works as a self-contained static package; future updates should only need content and link maintenance.
+  - The README should stay practical and mirror the real Pages structure, not become long-form documentation.
+---
