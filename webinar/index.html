@@ -731,6 +731,105 @@
         max-height: 188px;
       }
 
+      .slide-side-media {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.95fr);
+        gap: 28px;
+        width: 100%;
+        align-items: start;
+      }
+
+      .slide-side-media .side-copy {
+        display: grid;
+        gap: 18px;
+        align-content: start;
+      }
+
+      .slide-side-media .side-media {
+        display: grid;
+        gap: 14px;
+        align-content: start;
+      }
+
+      .slide-side-media .card-outer {
+        margin-top: 0 !important;
+        margin-bottom: 0;
+      }
+
+      .slide-side-media .highlight-box {
+        margin-top: 0 !important;
+        padding: 14px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slide-side-media .demo-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .slide-side-media .demo-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .slide-side-media .demo-figure {
+        min-height: 148px;
+        padding: 10px;
+      }
+
+      .slide-side-media .demo-figure img {
+        max-height: 132px;
+      }
+
+      .slide-prd-compare {
+        grid-template-columns: minmax(0, 0.78fr) minmax(360px, 0.72fr);
+        gap: 24px;
+      }
+
+      .slide-prd-compare .side-copy {
+        gap: 14px;
+      }
+
+      .slide-prd-compare .comparison-container {
+        gap: 12px !important;
+      }
+
+      .slide-prd-compare .comparison-box {
+        padding: 22px 24px;
+        border-radius: 24px;
+      }
+
+      .slide-prd-compare .comparison-box h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .slide-prd-compare .comparison-box ul {
+        gap: 10px !important;
+        font-size: 20px !important;
+      }
+
+      .slide-prd-compare .side-media {
+        max-width: 460px;
+        width: 100%;
+        justify-self: end;
+      }
+
+      .slide-prd-compare .demo-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .slide-prd-compare .demo-figure {
+        min-height: 182px;
+      }
+
+      .slide-prd-compare .demo-figure img {
+        max-height: 168px;
+      }
+
       /* QR placeholder */
       .qr-box {
         background: var(--color-vantablack);
@@ -1039,6 +1138,11 @@
           grid-template-columns: 1fr;
         }
 
+        .slide-side-media,
+        .slide-prd-compare {
+          grid-template-columns: 1fr;
+        }
+
         .demo-figure {
           min-height: 220px;
         }
@@ -1297,7 +1401,7 @@
         </div>
 
         <!-- SLIDE 14: PRD power -->
-        <div class="slide slide-side-media">
+        <div class="slide slide-side-media slide-prd-compare">
           <div class="side-copy">
             <h1 style="margin-bottom: 8px">PRD의 파워는 여기서 드러납니다</h1>
             <div class="comparison-container" style="margin-top: 8px; flex-direction: column; gap: 14px">
