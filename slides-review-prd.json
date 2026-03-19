@@ -1,7 +1,8 @@
 {
   "project": "Webinar Slide Review Refinement",
   "branchName": "main",
-  "description": "Refine image-heavy webinar slides without changing the overall slide size. Focus on slide 6 alignment, slide 9 image height, slide 14 side-by-side comparison density, then re-review the rest of the deck for presentation-grade composition.",
+  "description": "Refine image-heavy webinar slides without changing the overall slide size. Focus on slide 6 alignment, slide 9 image height, slide 13 side-by-side comparison density, then re-review the rest of the deck for presentation-grade composition. Deck is now 22 slides after consolidation.",
+  "verificationScript": "python3 - <<'PY'\nfrom pathlib import Path\nimport re\nhtml = Path('/Users/viewcommz/Downloads/안티그래비티/웨비나0320ppt간.html').read_text() if Path('/Users/viewcommz/Downloads/안티그래비티/웨비나0320ppt간.html').exists() else Path('/Users/viewcommz/Downloads/안티그래비티/웨비나0320ppt가안.html').read_text()\nassert '2026.3.20 (금)' in html\nassert '추천 알고리즘의 과학' in html\nassert '리뷰를 남겨주신 분들 중 5분께' in html\nnums = re.findall(r'<div class=\"slide-number\">(\\d+) / 22</div>', html)\nassert len(nums) == 22\nprint('OK')\nPY",
   "userStories": [
     {
       "id": "US-001",
@@ -19,11 +20,11 @@
     },
     {
       "id": "US-002",
-      "title": "Tighten slide 9 and slide 14 media layouts",
-      "description": "As a webinar attendee, I want slide 9 and slide 14 to feel compact and readable so that the PRD explanation and PRD power comparison look presentation-ready rather than oversized.",
+      "title": "Tighten slide 9 and slide 13 media layouts",
+      "description": "As a webinar attendee, I want slide 9 and slide 13 to feel compact and readable so that the PRD explanation and PRD power comparison look presentation-ready rather than oversized.",
       "acceptanceCriteria": [
         "Slide 9 image container height is reduced without shrinking the whole slide",
-        "Slide 14 uses a compact left text area and right vertical image stack",
+        "Slide 13 uses a compact left text area and right vertical image stack",
         "Both slides have no overflow",
         "Browser verification confirms the final image sizes fit inside each slide"
       ],
@@ -36,8 +37,7 @@
       "title": "Re-review all image-heavy slides",
       "description": "As a webinar attendee, I want all image-heavy slides to feel balanced and fully visible so that no slide looks cropped, crowded, or awkward on the projected screen.",
       "acceptanceCriteria": [
-        "Slides 4, 6, 7, 9, 11, 13, 14, 16, 18, 20, 21, and 23 are rechecked",
-        "All 25 slides report no overflow in browser review except known acceptable 1px cases, which should be eliminated if possible",
+        "All 22 slides report no overflow in browser review",
         "Local and deployed webinar HTML stay in sync",
         "GitHub Pages deploy succeeds after push"
       ],
