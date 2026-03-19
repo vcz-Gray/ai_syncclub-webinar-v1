@@ -38,3 +38,17 @@
   - The landing page should stay author/book-led while routing participants quickly to practical resources.
   - A repo-local validator is enough for this project; no Node or static-site framework is required.
 ---
+
+## 2026-03-19 - US-002
+- Added GitHub Pages deployment automation using the official custom workflow actions and a `.nojekyll` marker for the static site.
+- Files changed:
+  - .github/workflows/deploy-pages.yml
+  - .nojekyll
+  - prd.json
+  - progress.txt
+- Verification:
+  - `python3 scripts/validate_site.py --phase deploy`
+- **Learnings for future iterations:**
+  - The repo can stay framework-free while still using the current GitHub Pages deployment model.
+  - Because deployment targets `main`, later content commits can publish immediately after push.
+---

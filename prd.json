@@ -28,7 +28,7 @@
         "python3 scripts/validate_site.py --phase deploy passes"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
