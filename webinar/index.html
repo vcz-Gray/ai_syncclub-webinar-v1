@@ -754,6 +754,7 @@
         display: grid;
         gap: 14px;
         align-content: start;
+        padding-top: 34px;
       }
 
       .slide-side-media .card-outer {
@@ -822,6 +823,7 @@
         max-width: 460px;
         width: 100%;
         justify-self: end;
+        padding-top: 24px;
       }
 
       .slide-prd-compare .demo-grid-2 {
@@ -839,18 +841,32 @@
         height: 100%;
       }
 
+      .slide-prd-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.78fr);
+        gap: 26px;
+        align-items: start;
+      }
+
       .slide-prd-intro .highlight-box {
-        margin-top: 28px !important;
-        padding: 16px !important;
+        margin-top: 18px !important;
+        padding: 14px !important;
+        justify-self: end;
+        width: 100%;
+        max-width: 430px;
       }
 
       .slide-prd-intro .demo-figure--portrait {
-        height: 280px;
-        min-height: 280px;
+        height: 260px;
+        min-height: 260px;
       }
 
       .slide-prd-intro .demo-figure--portrait img {
         object-position: top center;
+      }
+
+      .slide-prd-intro .subtitle {
+        max-width: 980px;
       }
 
       /* QR placeholder */
@@ -1162,7 +1178,8 @@
         }
 
         .slide-side-media,
-        .slide-prd-compare {
+        .slide-prd-compare,
+        .slide-prd-intro {
           grid-template-columns: 1fr;
         }
 
@@ -1368,7 +1385,7 @@
         </div>
 
         <!-- SLIDE 9: PRD intro -->
-        <div class="slide">
+        <div class="slide slide-prd-intro">
           <div class="badge badge-part2">PART 3 — PRD</div>
           <h1 style="margin-bottom: 24px">PRD는 AI에게 보여줄 설계도입니다</h1>
           <p class="subtitle">복잡한 기획서가 아니라, 핵심을 짧게 정리한 문서입니다</p>
