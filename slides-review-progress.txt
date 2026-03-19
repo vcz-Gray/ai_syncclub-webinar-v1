@@ -34,3 +34,22 @@
   - Top-line alignment matters more than card size symmetry on presentation slides
   - Image-heavy explanation slides need a dedicated layout class instead of generic demo grids
 ---
+
+## 2026-03-19 - US-002
+- Completed compact media review for slide 9 and slide 14.
+- What changed:
+  - tightened slide 9 PRD image frame height
+  - reduced media-heavy container heights
+  - rebuilt slide 14 so the left comparison text is lighter and the right comparison images stack vertically
+- Files changed:
+  - webinar/index.html
+  - slides-review-prd.json
+  - slides-review-progress.txt
+- Verification:
+  - browser review confirmed no overflow on slides 9 and 14
+  - slide 9 image now renders within a controlled portrait frame
+  - slide 14 uses a true left/right layout with a right-side vertical image stack
+- **Learnings for future iterations:**
+  - Portrait document screenshots should use a dedicated shorter frame instead of inheriting generic demo dimensions
+  - Comparison slides are easier to scan when images become a narrow visual proof column rather than a bottom strip
+---
