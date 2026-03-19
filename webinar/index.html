@@ -648,6 +648,89 @@
         width: auto;
       }
 
+
+      .slide-media-grid .body-text,
+      .slide-media-journey .body-text {
+        font-size: 28px;
+        line-height: 1.45;
+        max-width: 1120px;
+      }
+
+      .slide-media-grid .subtitle,
+      .slide-media-single .subtitle,
+      .slide-media-journey .subtitle {
+        max-width: 1080px;
+        line-height: 1.35;
+      }
+
+      .slide-media-grid .highlight-box,
+      .slide-media-single .highlight-box,
+      .slide-media-journey .highlight-box,
+      .slide-media-compare .highlight-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slide-media-grid .highlight-box,
+      .slide-media-journey .highlight-box {
+        margin-top: 28px !important;
+        padding: 22px !important;
+      }
+
+      .slide-media-single .highlight-box {
+        margin-top: 28px !important;
+        padding: 18px !important;
+      }
+
+      .slide-media-compare .highlight-box {
+        margin-top: 28px !important;
+        padding: 18px !important;
+      }
+
+      .slide-media-grid .demo-grid-4,
+      .slide-media-grid .demo-grid-2,
+      .slide-media-journey .demo-grid-2,
+      .slide-media-compare .demo-grid-2 {
+        gap: 14px;
+      }
+
+      .slide-media-grid .demo-figure,
+      .slide-media-journey .demo-figure,
+      .slide-media-compare .demo-figure {
+        min-height: 170px;
+        padding: 10px;
+      }
+
+      .slide-media-grid .demo-figure img {
+        max-height: 148px;
+        border-radius: 12px;
+      }
+
+      .slide-media-grid-portraits .demo-figure img {
+        max-height: 164px;
+      }
+
+      .slide-media-single .demo-figure,
+      .slide-media-single .demo-figure--wide,
+      .slide-media-single .demo-figure--portrait {
+        min-height: auto;
+      }
+
+      .slide-media-single .demo-figure--wide img,
+      .slide-media-compare .demo-figure img {
+        max-height: 260px;
+      }
+
+      .slide-media-single .demo-figure--portrait img {
+        max-height: 340px;
+        width: auto;
+      }
+
+      .slide-media-journey .demo-figure img {
+        max-height: 188px;
+      }
+
       /* QR placeholder */
       .qr-box {
         background: var(--color-vantablack);
@@ -1047,7 +1130,7 @@
         </div>
 
         <!-- SLIDE 4: IDE intro -->
-        <div class="slide">
+        <div class="slide slide-media-grid slide-media-grid-tools">
           <h1>이게 바로 그 도구입니다</h1>
           <p class="body-text" style="margin-top: 24px; max-width: 980px">
             무서워 보이지만 핵심은 채팅창입니다. 한국어로 설명하면 AI가 코드와 화면 초안을 만듭니다.
@@ -1080,7 +1163,7 @@
         </div>
 
         <!-- SLIDE 6: Stitch update -->
-        <div class="slide">
+        <div class="slide slide-media-grid slide-media-grid-portraits">
           <div class="badge badge-part3">최근 공식 업데이트</div>
           <h1 style="margin-bottom: 24px">Stitch가 더 좋아졌습니다</h1>
           <div class="card-outer" style="margin-top: 24px">
@@ -1107,7 +1190,7 @@
         </div>
 
         <!-- SLIDE 7: Stitch demo first pass -->
-        <div class="slide">
+        <div class="slide slide-media-single">
           <div class="badge badge-live">LIVE DEMO</div>
           <h1 style="margin-bottom: 24px">먼저 Stitch만으로 UI를 생성해봅니다</h1>
           <p class="subtitle">아이디어 설명만으로도 첫 화면은 꽤 빠르게 나옵니다</p>
@@ -1173,7 +1256,7 @@
         </div>
 
         <!-- SLIDE 11: PRD live -->
-        <div class="slide">
+        <div class="slide slide-media-single">
           <div class="badge badge-live">LIVE DEMO</div>
           <h1 style="margin-bottom: 24px">이제 PRD를 직접 만들어봅니다</h1>
           <p class="subtitle">같은 아이디어를 4문항으로 정리해, AI가 이해할 수 있게 바꿉니다</p>
@@ -1197,7 +1280,7 @@
         </div>
 
         <!-- SLIDE 13: PRD to Stitch -->
-        <div class="slide">
+        <div class="slide slide-media-single">
           <div class="badge badge-live">LIVE DEMO</div>
           <h1 style="margin-bottom: 24px">이제 PRD를 넣고 다시 Stitch를 돌립니다</h1>
           <p class="subtitle">같은 아이디어인데도 결과가 더 또렷해집니다</p>
@@ -1210,7 +1293,7 @@
         </div>
 
         <!-- SLIDE 14: PRD power -->
-        <div class="slide">
+        <div class="slide slide-media-compare">
           <h1 style="margin-bottom: 32px">PRD의 파워는 여기서 드러납니다</h1>
           <div class="comparison-container" style="margin-top: 16px">
             <div class="comparison-box before">
@@ -1263,7 +1346,7 @@
         </div>
 
         <!-- SLIDE 16: User journey example -->
-        <div class="slide">
+        <div class="slide slide-media-journey">
           <h1 style="margin-bottom: 24px">사용자 여정을 설명하면 흐름이 잡힙니다</h1>
           <p class="body-text" style="max-width: 980px">
             무엇을 먼저 보고, 어디서 입력하고, 어떤 결과를 확인하는지를 보여주면 다음 문서로 이어지기 쉽습니다.
@@ -1288,7 +1371,7 @@
         </div>
 
         <!-- SLIDE 18: TRD detail -->
-        <div class="slide">
+        <div class="slide slide-media-single">
           <h1 style="margin-bottom: 28px">TRD에는 이런 것들이 들어갑니다</h1>
           <div class="grid-4" style="margin-top: 28px">
             <div class="grid-card"><h3 style="color: var(--color-purple); margin-bottom: 12px">화면</h3><p>각 화면의 목적과 구성</p></div>
@@ -1323,7 +1406,7 @@
         </div>
 
         <!-- SLIDE 20: AI Studio how-to -->
-        <div class="slide">
+        <div class="slide slide-media-single">
           <h1 style="margin-bottom: 24px">AI Studio 활용 포인트</h1>
           <div class="comparison-container" style="margin-top: 16px">
             <div class="comparison-box before">
