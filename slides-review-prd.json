@@ -1,0 +1,49 @@
+{
+  "project": "Webinar Slide Review Refinement",
+  "branchName": "main",
+  "description": "Refine image-heavy webinar slides without changing the overall slide size. Focus on slide 6 alignment, slide 9 image height, slide 14 side-by-side comparison density, then re-review the rest of the deck for presentation-grade composition.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Align slide 6 text and image containers",
+      "description": "As a webinar attendee, I want the Stitch update explanation and the supporting image block to start on the same horizontal line so the slide feels intentional and easy to scan.",
+      "acceptanceCriteria": [
+        "Slide 6 uses a true left/right layout",
+        "The top of the Gemini 3 card aligns with the top of the right image block",
+        "Slide 6 has no overflow",
+        "Browser verification confirms slide 6 image sizes render within the slide"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Tighten slide 9 and slide 14 media layouts",
+      "description": "As a webinar attendee, I want slide 9 and slide 14 to feel compact and readable so that the PRD explanation and PRD power comparison look presentation-ready rather than oversized.",
+      "acceptanceCriteria": [
+        "Slide 9 image container height is reduced without shrinking the whole slide",
+        "Slide 14 uses a compact left text area and right vertical image stack",
+        "Both slides have no overflow",
+        "Browser verification confirms the final image sizes fit inside each slide"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Re-review all image-heavy slides",
+      "description": "As a webinar attendee, I want all image-heavy slides to feel balanced and fully visible so that no slide looks cropped, crowded, or awkward on the projected screen.",
+      "acceptanceCriteria": [
+        "Slides 4, 6, 7, 9, 11, 13, 14, 16, 18, 20, 21, and 23 are rechecked",
+        "All 25 slides report no overflow in browser review except known acceptable 1px cases, which should be eliminated if possible",
+        "Local and deployed webinar HTML stay in sync",
+        "GitHub Pages deploy succeeds after push"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}

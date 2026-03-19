@@ -1,0 +1,36 @@
+## Codebase Patterns
+- Do not change the slide canvas size; only adjust slide-local layout.
+- Image-heavy slides need their own classes and should not inherit generic text-first spacing rules.
+- Browser measurement using `.slide.scrollHeight` vs `.slide.clientHeight` is the fastest way to catch projection overflow.
+- Keep the local source HTML and `webinar/index.html` synchronized in every iteration.
+
+---
+
+## 2026-03-19 - US-001
+- Started review loop for image-heavy slides.
+- Focus now:
+  - slide 6 left/right alignment
+  - slide 9 PRD image height
+  - slide 14 comparison density and image stacking
+- **Learnings for future iterations:**
+  - `slide-side-media` markup alone is not enough; matching CSS must exist or the layout silently collapses to a vertical stack.
+---
+
+## 2026-03-19 - US-001
+- Completed slide 6 alignment review.
+- What changed:
+  - Converted slide 6 into a true left/right media layout
+  - Aligned the Gemini 3/Prototypes card block with the image container top edge
+  - Reduced right-side image sizes so the slide stays inside the fixed canvas
+- Files changed:
+  - webinar/index.html
+  - slides-review-prd.json
+  - slides-review-progress.txt
+  - .claude/ralph-loop.local.md
+- Verification:
+  - browser review confirmed no overflow on slide 6
+  - rendered image sizes on slide 6 fit within the slide
+- **Learnings for future iterations:**
+  - Top-line alignment matters more than card size symmetry on presentation slides
+  - Image-heavy explanation slides need a dedicated layout class instead of generic demo grids
+---
