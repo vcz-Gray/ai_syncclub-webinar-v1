@@ -67,3 +67,9 @@
   - Fixed-canvas decks need browser measurement after every structural change, not just visual inspection.
   - The remaining quality work is now aesthetic tuning, not overflow correction.
 ---
+
+## 2026-03-19 - Verification script update
+- Updated slides-review-prd.json verification to match 22-slide deck (was 25).
+- Deck was consolidated from 25→22 in prior session (removed 3 transition slides: PRD done, User journey intro, TRD intro).
+- All stories still pass with updated verification.
+---

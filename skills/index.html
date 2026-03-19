@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Codex Skills</title>
+    <title>Codex Skills &amp; AI 도구 가이드 — AI 싱크클럽 웨비나</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles/site.css" />
   </head>
   <body>
@@ -25,34 +22,308 @@
       </header>
 
       <section class="page-header">
-        <span class="eyebrow">Codex Skills</span>
-        <h1 class="section-title">설치형 스킬 패키지</h1>
+        <span class="eyebrow">Skills &amp; Guides</span>
+        <h1 class="section-title">설치형 스킬 패키지 &amp; AI 도구 활용 가이드</h1>
         <p>
-          사람이 읽는 md 자료와 별개로, Codex 안에서 재사용할 수 있는 설치형 skill 구조도 같이 제공합니다.
-          각 skill은 `SKILL.md`, `agents/openai.yaml`, 예시 레퍼런스로 구성했습니다.
+          Codex 안에서 재사용할 수 있는 설치형 skill과 함께,
+          Claude Code, CLAUDE.md, TRD 작성, 프로젝트 구조화까지
+          AI 코딩 도구를 제대로 활용하는 가이드를 총정리했습니다.
         </p>
       </section>
 
+      <!-- 설치형 Skills -->
       <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">설치형 Codex Skills</h2>
+          <p>각 skill은 SKILL.md, agents/openai.yaml, 예시 레퍼런스로 구성됩니다. 바로 가져다 쓰세요.</p>
+        </div>
         <div class="skill-list">
           <article class="skill-item">
             <h3><a href="./service-idea-prd/SKILL.md">service-idea-prd</a></h3>
-            <p>서비스 아이디어를 4문항 PRD로 압축하는 skill입니다.</p>
+            <p>서비스 아이디어를 4문항 PRD로 압축하는 skill입니다. 누가 쓰나? 뭐가 불편한가? 핵심 기능 3개? 화면 몇 개? — 이 구조를 자동으로 유도합니다.</p>
           </article>
           <article class="skill-item">
             <h3><a href="./stitch-prompt-crafter/SKILL.md">stitch-prompt-crafter</a></h3>
-            <p>PRD를 Stitch 입력 프롬프트와 수정 지시문으로 바꿉니다.</p>
+            <p>PRD를 Stitch 입력 프롬프트와 수정 지시문으로 바꿉니다. 초기 생성, 스타일 정제, 멀티스크린 확장, Prototypes 연결까지 단계별로 안내합니다.</p>
           </article>
           <article class="skill-item">
             <h3><a href="./webinar-followup-kit/SKILL.md">webinar-followup-kit</a></h3>
-            <p>웨비나 후속 자료, FAQ, 다음 액션 문서를 빠르게 만듭니다.</p>
+            <p>웨비나 후속 자료, FAQ, 다음 액션 문서를 빠르게 만듭니다. 1일/3일/7일 플랜까지 자동 생성합니다.</p>
           </article>
           <article class="skill-item">
             <h3><a href="./event-promo-copy/SKILL.md">event-promo-copy</a></h3>
-            <p>행사/웨비나/스터디 공지용 짧은 홍보 카피를 빠르게 생성합니다.</p>
+            <p>행사/웨비나/스터디 공지용 짧은 홍보 카피를 빠르게 생성합니다. 카톡, 슬랙, 커뮤니티, 공지문에 바로 쓸 수 있는 포맷.</p>
           </article>
         </div>
       </section>
+
+      <!-- CLAUDE.md 가이드 -->
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">CLAUDE.md 작성 가이드</h2>
+          <p>프로젝트의 "헌법". AI가 매 세션마다 가장 먼저 읽는 파일을 제대로 쓰는 법입니다.</p>
+        </div>
+        <div class="split-grid">
+          <div class="list-panel panel">
+            <h2>반드시 포함할 항목</h2>
+            <ul>
+              <li><strong>프로젝트 컨텍스트</strong> — 기술 스택, 목적을 1~2줄로</li>
+              <li><strong>필수 명령어</strong> — dev, test, build, lint, deploy</li>
+              <li><strong>디렉토리 맵</strong> — 코드가 어디에 있는지</li>
+              <li><strong>비기본 컨벤션</strong> — "Zustand 사용, Redux 금지" 같은 규칙</li>
+              <li><strong>흔한 실수 방지</strong> — "마이그레이션 먼저 실행할 것"</li>
+              <li><strong>참조 문서</strong> — "@docs/api.md" + "Read when: API 수정 시"</li>
+            </ul>
+          </div>
+          <div class="list-panel panel">
+            <h2>파일 계층 구조</h2>
+            <ul>
+              <li><strong>./CLAUDE.md</strong> — 프로젝트 루트 (주 파일, Git 커밋)</li>
+              <li><strong>.claude/rules/*.md</strong> — 자동 로드 규칙 (Git 커밋)</li>
+              <li><strong>subfolder/CLAUDE.md</strong> — 디렉토리별 특화 (Git 커밋)</li>
+              <li><strong>./CLAUDE.local.md</strong> — 개인 설정 (Git 미포함)</li>
+              <li><strong>200~300줄 이내</strong>로 유지, WHY/WHAT/HOW 구조</li>
+              <li><strong>IMPORTANT, YOU MUST</strong> 키워드로 강조</li>
+            </ul>
+          </div>
+        </div>
+
+        <article class="example-item" style="margin-top: 18px;">
+          <h3>CLAUDE.md 템플릿 예시</h3>
+          <div class="example-meta">
+            <div style="font-family: monospace; white-space: pre-wrap; font-size: 14px; line-height: 1.8; background: rgba(0,0,0,0.04); padding: 16px; border-radius: 12px;"># MyProject
+SaaS 플랫폼 — Next.js 15, React 19, TypeScript 5.6, Supabase
+
+## Commands
+pnpm dev        # 개발 서버
+pnpm test       # 테스트 (Vitest)
+pnpm build      # 프로덕션 빌드
+
+## Project Structure
+src/components/  # React 컴포넌트 (PascalCase)
+src/routes/      # API 엔드포인트
+src/models/      # DB 스키마
+
+## Rules
+- IMPORTANT: 함수형 컴포넌트 + hooks만 사용
+- YOU MUST: TypeScript strict mode
+- MUST NOT: Redux, 인라인 스타일, 타입 미지정 props</div>
+          </div>
+        </article>
+      </section>
+
+      <!-- 커스텀 슬래시 커맨드 -->
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">커스텀 슬래시 커맨드 만들기</h2>
+          <p>자주 쓰는 긴 프롬프트를 /커맨드로 등록하는 방법입니다.</p>
+        </div>
+        <div class="split-grid">
+          <div class="list-panel panel">
+            <h2>기본 규칙</h2>
+            <ul>
+              <li><code>.claude/commands/</code> 디렉토리에 마크다운 파일 생성</li>
+              <li>파일명이 곧 커맨드명: <code>commit.md</code> → <code>/commit</code></li>
+              <li>하위 디렉토리로 네임스페이스: <code>posts/new.md</code> → <code>/posts:new</code></li>
+              <li><code>$ARGUMENTS</code> 플레이스홀더로 유연한 입력 지원</li>
+              <li>동사-명사 형식으로 일관된 네이밍</li>
+            </ul>
+          </div>
+          <div class="list-panel panel">
+            <h2>실전 커맨드 예시</h2>
+            <ul>
+              <li><code>/commit</code> — 표준화된 Git 커밋 메시지 생성</li>
+              <li><code>/test</code> — 보일러플레이트 테스트 파일 자동 생성</li>
+              <li><code>/review</code> — 보안/성능/접근성 전체 코드 감사</li>
+              <li><code>/build</code> — 프로젝트 빌드 후 에러 자동 수정</li>
+              <li><code>/posts:publish</code> — draft 해제, 검증, Git push</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRD 작성 가이드 -->
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">TRD (기술 요구사항 문서) 작성 가이드</h2>
+          <p>PRD가 "방향"이라면, TRD는 "만들기 위한 설명서"입니다. AI 코딩 도구에 넣을 때 최적화된 구조입니다.</p>
+        </div>
+        <div class="split-grid">
+          <div class="list-panel panel">
+            <h2>TRD 필수 항목</h2>
+            <ul>
+              <li><strong>목적</strong> — 프로젝트 존재 이유를 한 줄로</li>
+              <li><strong>기술 스택</strong> — Frontend, Backend, 배포 환경</li>
+              <li><strong>핵심 기능별 상세</strong> — 입력/출력/엣지 케이스/수용 기준</li>
+              <li><strong>코딩 컨벤션</strong> — 함수형, 파일명 규칙, 필수 패턴</li>
+              <li><strong>참고 화면</strong> — 스크린샷 또는 Figma 링크</li>
+              <li><strong>Few-Shot 예시</strong> — 입출력 시나리오 2~3개 (AI 품질 대폭 향상)</li>
+            </ul>
+          </div>
+          <div class="list-panel panel">
+            <h2>핵심 원칙</h2>
+            <ul>
+              <li>자연어(마크다운)로 시작하고, 필요 시 JSON/OpenAPI로 진화</li>
+              <li>AI는 추론하지 않으므로 엣지 케이스를 직접 명시</li>
+              <li>"정확"의 정의를 측정 가능한 조건으로 작성</li>
+              <li>아키텍처 의도를 기능 요구사항과 함께 문서화</li>
+              <li>코딩 패턴과 스타일을 프로젝트별로 명시</li>
+              <li>버전 관리 연동으로 AI에게 변경 히스토리 제공</li>
+            </ul>
+          </div>
+        </div>
+
+        <article class="example-item" style="margin-top: 18px;">
+          <h3>TRD 핵심 기능 작성 예시</h3>
+          <div class="example-meta">
+            <div style="font-family: monospace; white-space: pre-wrap; font-size: 14px; line-height: 1.8; background: rgba(0,0,0,0.04); padding: 16px; border-radius: 12px;">### 1. 사용자 인증
+- 입력: 이메일 + 비밀번호
+- 출력: JWT 토큰 + 대시보드 리다이렉트
+- 엣지 케이스: 중복 이메일, 비밀번호 8자 미만, 네트워크 오류
+- 수용 기준: 로그인 후 3초 내 대시보드 표시
+
+### 2. 대시보드
+- 입력: 인증된 사용자 세션
+- 출력: KPI 카드 4개 + 최근 활동 테이블
+- 엣지 케이스: 데이터 없음 상태, 로딩 상태, API 오류
+- 수용 기준: 첫 렌더링 2초 이내, 빈 상태 안내 문구 표시</div>
+          </div>
+        </article>
+      </section>
+
+      <!-- AI 코딩 프롬프트 가이드 -->
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">AI 코딩 프롬프트 작성 가이드</h2>
+          <p>비개발자도 AI 코딩 도구에서 좋은 결과를 얻는 프롬프트 작성법입니다.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Plan-Before-Code</h3>
+            <p>
+              <strong>가장 중요한 원칙.</strong>
+              "코드 작성하지 마. 계획만 세워줘." → 검토 → 승인 → "좋아, 이제 코딩 시작해."
+              이 3단계가 결과 품질을 극적으로 올립니다.
+            </p>
+          </article>
+          <article class="card">
+            <h3>구체적 예시와 함께</h3>
+            <p>
+              "폼 만들어줘"가 아니라
+              "이름, 이메일, 메시지 필드가 있는 문의 폼. 제출 후 확인 메시지 표시. 흰색 배경, 파란색 제출 버튼."
+              <strong>스크린샷 첨부가 가장 효과적.</strong>
+            </p>
+          </article>
+          <article class="card">
+            <h3>Goal-Constraints-Format</h3>
+            <p>
+              <strong>Goal:</strong> 상품 목록 페이지 만들기<br>
+              <strong>Constraints:</strong> 모바일 대응, 외부 API 없음, 최대 12개<br>
+              <strong>Format:</strong> HTML, CSS, JS 별도 파일
+            </p>
+          </article>
+          <article class="card">
+            <h3>점진적 빌드와 테스트</h3>
+            <p>
+              한 번에 전체가 아니라 기능 하나씩 만들고 테스트.
+              완료 전에 <strong>"폼이 실제로 제출되는지 확인해줘"</strong> 같은 자가 검증을 요청하세요.
+            </p>
+          </article>
+          <article class="card">
+            <h3>파일 직접 참조</h3>
+            <p>
+              "config.json과 styles.css를 읽고 우리 설정을 이해해."
+              말로 설명하기 어려우면 <strong>디자인 캡처를 드래그앤드롭</strong>으로 보여주세요.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Extended Thinking 활용</h3>
+            <p>
+              Claude Code에서 <code>Ctrl+O</code>로 토글.
+              아키텍처 결정, 버그 분석, 트레이드오프 판단에 활용.
+              <strong>"think hard"</strong>라고 말하면 더 깊이 추론합니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- AI 친화적 프로젝트 구조 -->
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">AI 친화적 프로젝트 구조</h2>
+          <p>AI 코딩 도구가 코드를 잘 이해하고 생성하도록 프로젝트를 구성하는 법입니다.</p>
+        </div>
+        <div class="split-grid">
+          <div class="list-panel panel">
+            <h2>핵심 원칙</h2>
+            <ul>
+              <li><strong>파일당 500줄 미만</strong> 유지 (컨텍스트 윈도우 관리)</li>
+              <li><strong>플랫한 계층</strong> 구조 (깊은 중첩 지양)</li>
+              <li><strong>설명적 파일명</strong>: goal-tracker.js, user-profile.tsx</li>
+              <li><strong>파일 상단 요약</strong>: // 사용자 목표 처리; Duolingo API 연동</li>
+              <li><strong>모듈화</strong>: 파일당 하나의 관심사</li>
+              <li><strong>작업 간 /clear</strong>: 새 작업 시 컨텍스트 초기화</li>
+            </ul>
+          </div>
+          <div class="list-panel panel">
+            <h2>권장 폴더 구조</h2>
+            <ul style="font-family: monospace; font-size: 14px;">
+              <li>project-root/</li>
+              <li>&nbsp;&nbsp;CLAUDE.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# AI 지시사항</li>
+              <li>&nbsp;&nbsp;README.md &nbsp;&nbsp;&nbsp;&nbsp;# 프로젝트 개요</li>
+              <li>&nbsp;&nbsp;docs/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 기획서, 와이어프레임</li>
+              <li>&nbsp;&nbsp;src/components/ # 재사용 UI 모듈</li>
+              <li>&nbsp;&nbsp;src/api/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 엔드포인트</li>
+              <li>&nbsp;&nbsp;src/app.js &nbsp;&nbsp;&nbsp;&nbsp;# 진입점</li>
+              <li>&nbsp;&nbsp;tests/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 테스트</li>
+              <li>&nbsp;&nbsp;deploy/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# CI/CD 스크립트</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI/UX 반복 개선 워크플로 -->
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">AI와 UI/UX 반복 개선 워크플로</h2>
+          <p>디자인에서 코드까지, AI 도구를 활용한 5단계 반복 개선 프로세스입니다.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card" style="border-top: 3px solid var(--accent);">
+            <h3>1. 요구사항 정의</h3>
+            <p>Claude로 PRD/사용자 플로우 초안을 만듭니다. "코드 작성하지 말고 계획만 세워줘."</p>
+          </article>
+          <article class="card" style="border-top: 3px solid var(--accent-2);">
+            <h3>2. 초기 프로토타입</h3>
+            <p>Stitch로 UI 초안, AI Studio Build로 작동하는 코드를 빠르게 생성합니다.</p>
+          </article>
+          <article class="card" style="border-top: 3px solid var(--accent-3);">
+            <h3>3. 반복 정제</h3>
+            <p>길고 상세한 프롬프트로 정확도를 올립니다. 한 번에 한 화면씩 반복합니다.</p>
+          </article>
+          <article class="card" style="border-top: 3px solid var(--accent);">
+            <h3>4. 테스트 &amp; 검증</h3>
+            <p>사용성 테스트, 접근성(WCAG) 확인. 주변 1명에게 보여주고 피드백 수집.</p>
+          </article>
+          <article class="card" style="border-top: 3px solid var(--accent-2);">
+            <h3>5. 코드 핸드오프</h3>
+            <p>생성된 코드를 내보내거나 GitHub에 연동. 인간 폴리시로 마무리합니다.</p>
+          </article>
+          <article class="card" style="border-top: 3px solid var(--accent-3);">
+            <h3>핵심 원칙</h3>
+            <p>로우 파이 스케치부터 시작. 스크린샷이 가장 효과적. AI 프로토타입은 항상 사람이 마무리.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="mini-nav">
+          <a href="https://github.com/vcz-Gray/ai_syncclub-webinar-v1">GitHub 저장소</a>
+          <a href="../tips/">꿀팁</a>
+          <a href="../examples/">예시 모음</a>
+          <a href="../downloads/index.html">다운로드</a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
