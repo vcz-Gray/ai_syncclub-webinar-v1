@@ -52,3 +52,24 @@
   - The repo can stay framework-free while still using the current GitHub Pages deployment model.
   - Because deployment targets `main`, later content commits can publish immediately after push.
 ---
+
+## 2026-03-19 - US-003
+- Added the participant-facing tips page and the core markdown download pack: cheat sheet, PRD template, Stitch prompt pack, next steps, update summary, FAQ, and promo copy kit.
+- Files changed:
+  - tips/index.html
+  - downloads/index.html
+  - downloads/participant-cheatsheet.md
+  - downloads/prd-template.md
+  - downloads/stitch-prompt-pack.md
+  - downloads/post-webinar-next-steps.md
+  - downloads/stitch-update-summary.md
+  - downloads/faq-and-common-mistakes.md
+  - downloads/promo-copy-kit.md
+  - prd.json
+  - progress.txt
+- Verification:
+  - `python3 scripts/validate_site.py --phase content`
+- **Learnings for future iterations:**
+  - The downloads page should stay raw-markdown-first so participants can reuse content in their own docs immediately.
+  - The tips page works best when it prioritizes action sequence over long explanation.
+---
