@@ -1,0 +1,40 @@
+## Codebase Patterns
+- Static-first is the right shape for this repo because the remote repository is empty and the deliverable is mostly HTML and markdown.
+- The webinar deck already exists as a self-contained HTML file, so the site should link to it rather than trying to rebuild it with a framework.
+- Participant resources should exist both as browsable pages and raw markdown downloads.
+- Skills need concise `SKILL.md` files plus `agents/openai.yaml` metadata; the site should explain how to use them without requiring Codex expertise.
+
+---
+
+## 2026-03-19 - US-001
+- Started static site bootstrap for the empty repository.
+- Source references:
+  - ../웨비나0320ppt가안.html
+  - ../0320웨비나핵심정리.md
+- Files planned:
+  - index.html
+  - webinar/index.html
+  - styles/site.css
+  - scripts/validate_site.py
+- **Learnings for future iterations:**
+  - The site should anchor around the updated webinar deck and treat everything else as support material.
+  - A shared validator script will make later iterations much safer.
+---
+
+## 2026-03-19 - US-001
+- Completed the repository bootstrap with a styled root landing page, the webinar publishing path, shared CSS, copied book/webinar assets, and a reusable validation script.
+- Files changed:
+  - index.html
+  - webinar/index.html
+  - styles/site.css
+  - scripts/validate_site.py
+  - assets/book_cover.jpeg
+  - prd.json
+  - progress.txt
+  - .claude/ralph-loop.local.md
+- Verification:
+  - `python3 scripts/validate_site.py --phase bootstrap`
+- **Learnings for future iterations:**
+  - The landing page should stay author/book-led while routing participants quickly to practical resources.
+  - A repo-local validator is enough for this project; no Node or static-site framework is required.
+---

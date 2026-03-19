@@ -1,0 +1,91 @@
+{
+  "project": "AI Syncclub Webinar Pages Pack",
+  "branchName": "main",
+  "description": "Bootstrap an author/book-led GitHub Pages hub for the AI Syncclub webinar, publish the updated webinar deck, provide participant tip packs and examples, add reusable Codex skills, and configure automatic deployment from main.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Bootstrap static site and publish webinar deck",
+      "description": "As a webinar visitor, I want a polished landing page and a working webinar page so that I can access the updated slides and core resources immediately.",
+      "acceptanceCriteria": [
+        "A root landing page exists with links to webinar, tips, examples, downloads, and skills",
+        "The updated webinar HTML is published at webinar/index.html",
+        "Shared styling and basic site structure exist",
+        "python3 scripts/validate_site.py --phase bootstrap passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Add GitHub Pages auto deployment",
+      "description": "As the repo owner, I want GitHub Pages to deploy automatically from main so that merged updates are published without manual steps.",
+      "acceptanceCriteria": [
+        "A GitHub Actions workflow exists under .github/workflows/deploy-pages.yml",
+        "The workflow uses configure-pages, upload-pages-artifact, and deploy-pages official actions",
+        "The workflow triggers on pushes to main",
+        "python3 scripts/validate_site.py --phase deploy passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Create participant tip pack and downloads",
+      "description": "As a webinar participant, I want ready-to-use markdown guides and templates so that I can move from the webinar to action right away.",
+      "acceptanceCriteria": [
+        "Participant cheat sheet, PRD template, Stitch prompt pack, next steps, update summary, FAQ, and promo copy markdown files exist",
+        "tips/index.html links to each download resource",
+        "The copy is Korean-first and practical",
+        "python3 scripts/validate_site.py --phase content passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Build a large examples catalog",
+      "description": "As a participant, I want many concrete PRD and Stitch examples so that I can adapt them to my own service ideas.",
+      "acceptanceCriteria": [
+        "examples/index.html exists with at least 24 example cards",
+        "Examples cover personal services, internal tools, education/content, PRD samples, Stitch prompts, and Q&A responses",
+        "Each example includes problem, PRD draft, Stitch prompt, and extension point",
+        "python3 scripts/validate_site.py --phase examples passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Ship installable Codex skills",
+      "description": "As an advanced participant, I want installable skills and matching docs so that I can reuse the webinar workflows inside Codex.",
+      "acceptanceCriteria": [
+        "Four skills exist with SKILL.md and agents/openai.yaml",
+        "Skills cover service idea PRD, Stitch prompt crafting, webinar follow-up, and promo copy generation",
+        "Each skill has example references where needed",
+        "python3 scripts/validate_site.py --phase skills passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Finalize navigation and repo documentation",
+      "description": "As a repo visitor, I want clean navigation and a README so that I understand what the project contains and how to use it.",
+      "acceptanceCriteria": [
+        "README explains the project, local preview, Pages deploy, and where each resource lives",
+        "Internal navigation between landing, webinar, tips, examples, downloads, and skills works",
+        "The hub presents a book/author-led framing with participant resources underneath",
+        "python3 scripts/validate_site.py --phase full passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
