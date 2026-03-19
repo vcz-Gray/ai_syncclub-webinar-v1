@@ -577,6 +577,77 @@
         object-fit: cover;
       }
 
+      .demo-grid-4,
+      .demo-grid-2 {
+        display: grid;
+        gap: 18px;
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .demo-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .demo-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .demo-figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(8, 10, 18, 0.72);
+        min-height: 240px;
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+      }
+
+      .demo-figure img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 220px;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.96);
+      }
+
+      .demo-caption {
+        margin-top: auto;
+        font-size: 15px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.58);
+        text-align: center;
+      }
+
+      .demo-figure--wide {
+        max-width: 1040px;
+        margin: 0 auto;
+        min-height: auto;
+      }
+
+      .demo-figure--wide img {
+        max-height: 420px;
+      }
+
+      .demo-figure--portrait {
+        max-width: 420px;
+        margin: 0 auto;
+        min-height: auto;
+      }
+
+      .demo-figure--portrait img {
+        max-height: 460px;
+        width: auto;
+      }
+
       /* QR placeholder */
       .qr-box {
         background: var(--color-vantablack);
@@ -878,6 +949,19 @@
 
         .slide-centered {
           text-align: center;
+        }
+
+        .demo-grid-4,
+        .demo-grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .demo-figure {
+          min-height: 220px;
+        }
+
+        .demo-figure img {
+          max-height: 240px;
         }
       }
     </style>
