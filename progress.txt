@@ -73,3 +73,17 @@
   - The downloads page should stay raw-markdown-first so participants can reuse content in their own docs immediately.
   - The tips page works best when it prioritizes action sequence over long explanation.
 ---
+
+## 2026-03-19 - US-004
+- Built the examples catalog with 30 cards spanning personal services, internal tools, education/content, PRD samples, Stitch prompts, and Q&A response patterns.
+- Files changed:
+  - examples/index.html
+  - prd.json
+  - progress.txt
+- Verification:
+  - `python3 scripts/validate_site.py --phase examples`
+  - card count: `30`
+- **Learnings for future iterations:**
+  - The examples page should optimize for copy-and-adapt behavior, not long prose.
+  - Short, repeated card structure scales better than narrative sections for a large example pack.
+---
