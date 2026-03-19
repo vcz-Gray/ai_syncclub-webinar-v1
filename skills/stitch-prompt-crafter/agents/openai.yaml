@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stitch Prompt Crafter"
+  short_description: "PRD를 Stitch 프롬프트로 바꾸는 skill"
+  default_prompt: "Use $stitch-prompt-crafter to turn this PRD into Korean Stitch prompts."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Webinar Follow-up Kit"
+  short_description: "웨비나 후속 자료를 빠르게 만드는 skill"
+  default_prompt: "Use $webinar-followup-kit to turn this webinar into practical participant-facing docs."
+
+policy:
+  allow_implicit_invocation: true

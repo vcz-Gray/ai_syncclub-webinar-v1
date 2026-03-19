@@ -87,3 +87,20 @@
   - The examples page should optimize for copy-and-adapt behavior, not long prose.
   - Short, repeated card structure scales better than narrative sections for a large example pack.
 ---
+
+## 2026-03-19 - US-005
+- Added four installable Codex skills with matching `agents/openai.yaml` metadata and reference examples, plus a skills index page.
+- Files changed:
+  - skills/index.html
+  - skills/service-idea-prd/*
+  - skills/stitch-prompt-crafter/*
+  - skills/webinar-followup-kit/*
+  - skills/event-promo-copy/*
+  - prd.json
+  - progress.txt
+- Verification:
+  - `python3 scripts/validate_site.py --phase skills`
+- **Learnings for future iterations:**
+  - The installable skills should stay compact and delegate verbose examples to `references/examples.md`.
+  - A dedicated `skills/index.html` is necessary so non-Codex users can still understand what each skill does.
+---

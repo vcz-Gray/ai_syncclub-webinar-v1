@@ -1,0 +1,7 @@
+interface:
+  display_name: "Service Idea PRD"
+  short_description: "아이디어를 4문항 PRD로 압축하는 skill"
+  default_prompt: "Use $service-idea-prd to turn my rough service idea into a compact 4-question PRD."
+
+policy:
+  allow_implicit_invocation: true

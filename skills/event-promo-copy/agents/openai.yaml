@@ -1,0 +1,7 @@
+interface:
+  display_name: "Event Promo Copy"
+  short_description: "행사/웨비나 홍보 문구를 만드는 skill"
+  default_prompt: "Use $event-promo-copy to draft short webinar promo copy for Slack, chat, and community posts."
+
+policy:
+  allow_implicit_invocation: true
