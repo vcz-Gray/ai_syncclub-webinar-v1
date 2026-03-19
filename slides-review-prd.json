@@ -42,7 +42,7 @@
         "GitHub Pages deploy succeeds after push"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "notes": ""
     }
   ]

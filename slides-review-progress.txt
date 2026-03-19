@@ -53,3 +53,17 @@
   - Portrait document screenshots should use a dedicated shorter frame instead of inheriting generic demo dimensions
   - Comparison slides are easier to scan when images become a narrow visual proof column rather than a bottom strip
 ---
+
+## 2026-03-19 - US-003
+- Re-reviewed all image-heavy slides after the focused fixes and confirmed the full 25-slide deck stays inside the fixed canvas.
+- Rechecked slides:
+  - 4, 6, 7, 9, 11, 13, 14, 16, 18, 20, 21, 23
+- Verification:
+  - browser audit across all 25 slides reported `overflow=false`
+  - slide 6 renders as a true left/right layout
+  - slide 9 portrait document frame fits
+  - slide 14 renders as left comparison text plus right vertical image proof column
+- **Learnings for future iterations:**
+  - Fixed-canvas decks need browser measurement after every structural change, not just visual inspection.
+  - The remaining quality work is now aesthetic tuning, not overflow correction.
+---
