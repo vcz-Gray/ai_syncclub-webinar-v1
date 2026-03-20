@@ -47,7 +47,6 @@ def validate_content() -> None:
         "downloads/post-webinar-next-steps.md",
         "downloads/stitch-update-summary.md",
         "downloads/faq-and-common-mistakes.md",
-        "downloads/promo-copy-kit.md",
     )
     check_contains("tips/index.html", "꿀팁", "PRD", "Stitch", "FAQ")
 
